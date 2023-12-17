@@ -1,0 +1,109 @@
+<style>
+    .popup,.popup1,.popup2{
+        background-color: transparent;
+        height: 500px;
+        width: 500px;
+        padding: 10px;
+        margin-top: -300px;
+        /* position: relative; */
+        z-index: 2;
+            
+    }
+    .hidden{
+        display: none;
+    }
+
+    .popup__display{
+        display: flex;
+            justify-content: center;
+            align-items: center;
+    }
+    .closex:hover{
+        cursor: pointer;
+    }
+    .overlay
+    {
+        background-color: black;
+        opacity: 0.5;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+
+</style>
+
+<img src="./1.jpg" alt="" class="btn">
+<img src="./2.jpg" alt="" class="btw">
+<img src="./3.jpg" alt="" class="btx">
+
+<div class="overlay hidden"></div>
+<div class="popup__display">
+<div class="popup hidden">
+    <p style="text-align: end;" id="close" class="closex">X</p>
+    <img src="./1.jpg" alt="" width="500px" height="500px">
+    <!-- <img src="./2.jpg" alt="">
+    <img src="./3.jpg" alt=""> -->
+</div>
+
+<div class="popup1 hidden">
+    <p style="text-align: end;" id="close1" class="closex">X</p>
+    <!-- <img src="./1.jpg" alt="" width="500px" height="500px"> -->
+    <img src="./2.jpg" alt=""  width="500px" height="500px">
+    <!-- <img src="./3.jpg" alt=""> -->
+</div>
+
+<div class="popup2 hidden">
+    <p style="text-align: end;" id="close2" class="closex">X</p>
+    <!-- <img src="./1.jpg" alt="" width="500px" height="500px">
+    <img src="./2.jpg" alt=""> -->
+    <img src="./3.jpg" alt=""  width="500px" height="500px">
+</div>
+</div>
+
+<script>
+    var btn=document.querySelector(".btn")
+    var btw=document.querySelector(".btw")
+    var btx=document.querySelector(".btx")
+    var popup=document.querySelector(".popup")
+    var popup1=document.querySelector(".popup1")
+    var popup2=document.querySelector(".popup2")
+    var close=document.getElementById("close")
+    var close1=document.getElementById("close1")
+    var close2=document.getElementById("close2")
+
+    var overlay=document.querySelector(".overlay")
+
+    btn.addEventListener("click",function(){
+        popup.classList.remove("hidden")
+        overlay.classList.remove("hidden")
+    })
+
+    btw.addEventListener("click",function(){
+        popup1.classList.remove("hidden")
+        overlay.classList.remove("hidden")
+    })
+
+    btx.addEventListener("click",function(){
+        popup2.classList.remove("hidden")
+        overlay.classList.remove("hidden")
+    })
+
+    close.addEventListener("click",function(){
+        popup.classList.add("hidden")
+        overlay.classList.add("hidden")
+    })
+
+    close1.addEventListener("click",function(){
+        popup1.classList.add("hidden")
+        overlay.classList.add("hidden")
+    })
+
+    close2.addEventListener("click",function(){
+        popup2.classList.add("hidden")
+        overlay.classList.add("hidden")
+    })
+
+</script>
